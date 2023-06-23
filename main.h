@@ -53,4 +53,9 @@ int get_width(const char *format, int *i, va_list list);
 int get_precision(const char *format, int *i, va_list list);
 int get_size(const char *format, int *i);
 
+/***************UNTILITY FUNCTIONS***************/
+int is_printable(char);
+int is_digit(char);
+int append_hexa_code(char, char[], int);
+
 #endif "MAIN_H"
