@@ -32,3 +32,52 @@ int print_char(va_list types, char buffer[], int flags,
 
 	return (handle_write_char(c, buffer, flags, width, precision, size));
 }
+
+/******************** PRINT A STRING ********************/
+/**
+ * print_string - Function that prints strings
+ * @types: The list of arguments
+ * @buffer: Buffer of array to be handle
+ * @flags: To calculates the active flags
+ * @width: The width specification
+ * @precision: The precision specification
+ * @size: The size specification
+ */
+int print_string(va_list types, char buffer[],
+		int flags, int width, int precision, int size)
+{
+	int length = 0, i;
+	char *str = va_arg(types, char *);
+
+	UNUSED(buffer);
+	UNUSED(flags);
+	UNUSED(width);
+	UNUSED(precision);
+	UNUSED(size);
+	if (str == NULL)
+	{
+		str = "(null)";
+		if (precision >= 6)
+			str = "      "
+	}
+
+	while (str[length] != '\0')
+	{
+		if (flag & F_MINUS)
+		{
+			write(1, &str[0], length);
+			for (i = width - length; i > 0; i--)
+				write(1, " ", 1);
+			return (width);
+		}
+		else
+		{
+			for (i = width - length; i > 0; i--)
+				write(1, " ", 1);
+			write(1, &str[0], length);
+			return (width);
+		}
+	}
+
+	return (write(1, str, length);
+}
