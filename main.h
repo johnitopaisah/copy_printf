@@ -45,7 +45,7 @@ va_list list, char buffer[], int flags, int width, int precision, int size);
 /***************ALL THE FUNCTIONS***************/
 
 /* Helper function for the _printf() */
-void printf_buffer(char buffer[], int *buff_ind);
+void print_buffer(char buffer[], int *buff_ind);
 
 /* Functions to print chars and strings */
 int print_char(va_list types, char buffer[],

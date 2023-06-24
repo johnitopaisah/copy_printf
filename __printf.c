@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 				print_buffer(buffer, &buff_ind);
 			
 			/* write(1, &format[i], 1);*/
-			printed_chars++
+			printed_chars++;
 		}
 		else
 		{
