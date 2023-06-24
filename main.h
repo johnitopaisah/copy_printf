@@ -1,5 +1,5 @@
-#ifndef "MAIN_H"
-#define "MAIN_H"
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdio.h>
 #include <stdarg.h>
@@ -66,4 +66,4 @@ int is_printable(char);
 int is_digit(char);
 int append_hexa_code(char, char[], int);
 
-#endif "MAIN_H"
+#endif /* MAIN_H */
