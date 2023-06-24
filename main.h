@@ -57,6 +57,10 @@ int get_width(const char *format, int *i, va_list list);
 int get_precision(const char *format, int *i, va_list list);
 int get_size(const char *format, int *i);
 
+/* Functions for the width handler */
+int handle_write_char(char c, char buffer[], int flags,
+		int width, int precision, int size);
+
 /***************UNTILITY FUNCTIONS***************/
 int is_printable(char);
 int is_digit(char);
