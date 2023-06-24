@@ -12,3 +12,23 @@ void print_buffer(char buffer[], int *buff_ind)
 
 	*buff_ind = 0;
 }
+
+/******************** PRINT CHARACTERS ********************/
+/**
+ * print_char - Function that prints characters
+ * @types: The list of arguments
+ * @buffer: The buffer array to handle print
+ * @flags: To calculate the active flags
+ * @width: The width specification
+ * @precision: The precision specification
+ * @size: The size specification
+ *
+ * Return: Return the number of chars printed
+ */
+int print_char(va_list types, char buffer[], int flags,
+		int width, int precision, int size)
+{
+	char c = va_arg(types, int);
+
+	return (handle_write_char(c, buffer, flags, width, precision, size));
+}
