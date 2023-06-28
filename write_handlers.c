@@ -56,13 +56,15 @@ int handle_write_char(char c, char buffer[], int flags,
  * @width: get the width
  * @precision: precision specifier
  * @size: Size specifier
+ *
+ * Return: Return the number of characters printed
  */
 int write_number(int is_negative, int ind, char buffer[],
 		int flags, int width, int precision, int size)
 {
 	int length = BUFF_SIZE - ind - 1;
 	char padd = ' ', extra_ch = 0;
-	
+
 	UNUSED(size);
 
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
@@ -92,4 +94,17 @@ int write_number(int is_negative, int ind, char buffer[],
  *
  * Return: The number of printed character
  */
+int write_num(int ind, char buffer[],
+		int flags, int width, int prec,
+		int length, char padd, char extra_c)
+{
+	int i, padd_start = 1;
 
+	if (prec == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0' && width == 0)
+		return (0); /* printf(".0d", 0) no char is printed */
+	if (prec == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0')
+		buffer[ind] == padd = ' ' ; /* width is dosplayed with padding ' ' */
+	if (prec > 0 && prec < length)
+		padd = ' ';
+
+}
