@@ -42,6 +42,8 @@ int print_char(va_list types, char buffer[], int flags,
  * @width: The width specification
  * @precision: The precision specification
  * @size: The size specification
+ *
+ * Return: The number of characters printed
  */
 int print_string(va_list types, char buffer[],
 		int flags, int width, int precision, int size)
