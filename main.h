@@ -62,6 +62,10 @@ int get_size(const char *format, int *i);
 /* Functions for the width handler */
 int handle_write_char(char c, char buffer[], int flags,
 		int width, int precision, int size);
+int write_number(int is_positive, int ind, char buffer[], int flags,
+		int width, int precision, int size);
+int write_num(int ind, char bff[], int flags, int width, int precision,
+		int length, char padd, char extra_c);
 
 /***************UNTILITY FUNCTIONS***************/
 int is_printable(char);
