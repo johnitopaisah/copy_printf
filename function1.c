@@ -72,6 +72,7 @@ int print_string(va_list types, char buffer[],
 				write(1, " ", 1);
 			return (width);
 		}
+		
 		else
 		{
 			for (i = width - length; i > 0; i--)
@@ -83,3 +84,31 @@ int print_string(va_list types, char buffer[],
 
 	return (write(1, str, length));
 }
+
+
+/**************************** PRINT PERCENT SIGN *****************************/
+/**
+ * print_percent - prints a percent sign
+ * @types: Lists of arguments
+ * @buffer: The buffer of array to handle the print
+ * @flags: To calculate the active flags
+ * @width: get the width
+ * @precision: The precision specification
+ * @size: The size specifier.
+ *
+ * Return: Return the number of characters printed
+ */
+int print_percent(va_list types, char buffer[],
+		int flags, int width, int precision, int size)
+
+{
+	UNUSED(types);
+	UNUSED(buffer);
+	UNUSED(flags);
+	UNUSED(width);
+	UNUSED(precision);
+	UNUSED(size);
+	return (write(1, "%%", 1));
+}
+
+
