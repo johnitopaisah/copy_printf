@@ -60,6 +60,8 @@ int print_int(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
 int print_binary(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
+int print_unsigned(va_list types, char buffer[],
+		int flags, int width, int precision, int size);
 
 /* Function to handle other specifiers */
 int get_flags(const char *format, int *i);
