@@ -78,4 +78,6 @@ int is_printable(char);
 int is_digit(char);
 int append_hexa_code(char, char[], int);
 
+long int convert_size_number(long int num, int size);
+
 #endif /* MAIN_H */
