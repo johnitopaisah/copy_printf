@@ -31,3 +31,21 @@ long int convert_size_number(long int num, int size)
 
 	return ((int)num);
 }
+
+/************************* conver_size_unsignd ******************************/
+/**
+ * convert_size_unsignd - Function that casts a number to the specified size
+ * @num: The number to be casted
+ * @size: The number indicating the type to be casted
+ *
+ * Return: Return the casted value of num
+ */
+long int convert_size_unsignd(unsigned long int num, int size)
+{
+	if (size == S_LONG)
+		return (num);
+	else if (size == S_SHORT)
+		return ((unsigned short)num);
+
+	return ((unsigned int)num);
+}
