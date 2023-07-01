@@ -123,3 +123,22 @@ int print_octal(va_list types, char buffer[],
 
 	return (write_unsignd(0, i, buffer, flags, width, precision, size));
 }
+
+/****************** PRINT UNSIGNED NUMBER IN HEXADECIMAL ********************/
+/**
+ * print_hexadecimal - Function that prints an unsigned number in hexadecimal
+ * @types: The list of arguments
+ * @buffer: The buffer of array to handle print
+ * @flags: To calculate the active flags
+ * @width: The width specification
+ * @precision: The precision specifier
+ * @size: The size specifier
+ *
+ * Return: Return the number of characters printed
+ */
+int print_hexadecimal(va_list types, char buffer[],
+		int flags, int width, int precision, int size)
+{
+	return (print_hexa(types, "0123456789abcdef", buffer,
+				flags, width, precision, size));
+}
