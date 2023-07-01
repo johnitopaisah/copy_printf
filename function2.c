@@ -44,7 +44,7 @@ int print_binary(va_list types, char buffer[],
 			count++;
 		}
 	}
-	return (count)
+	return (count);
 }
 
 /*********************** PRINT UNSIGNED NUMBER ******************************/
@@ -66,4 +66,18 @@ int print_unsigned(va_list types, char buffer[],
 	unsigned long int num = va_arg(types, unsigned long int);
 
 	num = convert_size_unsignd(num, size);
+
+	if (num == 0)
+		buffer[i--] = '0';
+
+	buffer[BUFF_SIZE - 1] = '\0';
+
+	while (num > 0)
+	{
+		buffer[i--] = (num % 10) + '0';
+		num /= 10;
+	}
+	i++;
+
+	return (write_unsignd(0, i buffer, flags, width, precision, size));
 }
