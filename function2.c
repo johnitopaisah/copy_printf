@@ -46,3 +46,24 @@ int print_binary(va_list types, char buffer[],
 	}
 	return (count)
 }
+
+/*********************** PRINT UNSIGNED NUMBER ******************************/
+/**
+ * print_unsigned - Function that prints an unsigned number
+ * @types: The list of arguments
+ * @buffer: The buffer array to handle print
+ * @flags: To calculate the active flags
+ * @width: Th get the width
+ * @precision: The precision specification
+ * @size: The size specification
+ *
+ * Return: Return the number of characters printed
+ */
+int print_unsigned(va_list types, char buffer[],
+		int flags, int width, int precision, int size)
+{
+	int i = BUFF_SIZE - 2;
+	unsigned long int num = va_arg(types, unsigned long int);
+
+	num = convert_size_unsignd(num, size);
+}
