@@ -177,4 +177,14 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 		buffer[i--] = map_to[num % 16];
 		num /= 16;
 	}
+
+	if (flags &  F_HASH && init_num != 0)
+	{
+		buffer[i--] = flag_ch;
+		buffer[i--] = '0';
+	}
+
+	i++;
+
+	return (write_unsignd(0, i, buffer, flags, width, precision, size));
 }
