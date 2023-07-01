@@ -80,6 +80,8 @@ int write_unsignd(int is_negative, int ind, char buffer[],
 		int flags, int width, int precision, int size);
 int print_octal(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
+int print_hexadecimal(va_list types, char buffer[],
+		int flags, int width, int precision, int size);
 
 /***************UNTILITY FUNCTIONS***************/
 int is_printable(char);
