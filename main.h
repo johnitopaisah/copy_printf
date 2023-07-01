@@ -78,6 +78,8 @@ int write_num(int ind, char bff[], int flags, int width, int precision,
 		int length, char padd, char extra_c);
 int write_unsignd(int is_negative, int ind, char buffer[],
 		int flags, int width, int precision, int size);
+int print_octal(va_list types, char buffer[],
+		int flags, int width, int precision, int size);
 
 /***************UNTILITY FUNCTIONS***************/
 int is_printable(char);
