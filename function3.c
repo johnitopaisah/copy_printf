@@ -19,30 +19,30 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 	int i = BUFF_SIZE - 2;
 	unsigned long int num = va_arg(types, unsigned long int);
 	unsigned long int init_num = num;
-	
+
 	UNUSED(width);
-	
+
 	num = convert_size_unsignd(num, size);
-	
+
 	if (num == 0)
 		buffer[i--] = '0';
-	
+
 	buffer[BUFF_SIZE - 1] = '\0';
-	
+
 	while (num > 0)
 	{
 		buffer[i--] = map_to[num % 16];
 		num /= 16;
 	}
-	
+
 	if (flags &  F_HASH && init_num != 0)
 	{
 		buffer[i--] = flag_ch;
 		buffer[i--] = '0';
 	}
-	
+
 	i++;
-	
+
 	return (write_unsignd(0, i, buffer, flags, width, precision, size));
 }
 
@@ -92,7 +92,7 @@ int print_pointer(va_list types, char buffer[],
 		extra_c = ' ';
 		length++;
 	}
-	
+
 	ind++;
 
 	return (write_pointer(buffer, ind, length, width,
