@@ -72,6 +72,10 @@ int print_hexa_upper(va_list types, char buffer[],
 int print_hexa(va_list types, char map_to[], char buffer[],
 		int flags, int width, int precision, int size);
 
+/* Function to Print non Printable Characters */
+int print_non_printable(va_list types, char buffer[],
+		int flags, int width, int precision, int size);
+
 /* Function to Print Memory Address */
 int print_pointer(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
