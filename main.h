@@ -72,6 +72,8 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 		int flags, int width, int precision, int size);
 int print_reverse(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
+int print_rot13string(va_list types, char buffer[],
+		int flags, int width, int precision, int size);
 
 /* Function to Print non Printable Characters */
 int print_non_printable(va_list types, char buffer[],
