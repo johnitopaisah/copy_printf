@@ -98,3 +98,37 @@ int print_pointer(va_list types, char buffer[],
 	return (write_pointer(buffer, ind, length, width,
 				flags, padd, extra_c, padd_start));
 }
+
+/************************** PRINT NON PRINTABLE *****************************/
+/**
+ * print_non_printable - Function that prints the ASCII code
+ * in hexa of non printable
+ * @types: The list of arguments
+ * @buffer: The buffer array to handle print
+ * @flags: To calculate the active flags
+ * @width: The width specifier
+ * @precision: The precision specifier
+ * @size: The size specifier
+ *
+ * Return: Return the number of characters printed
+ */
+int print_non_printable(va_list types, char buffer[],
+		int flags, int width, int precision, int size)
+{
+	int i = 0, offset = 0;
+	char *str = va_arg(types, char *);
+
+	UNUSED(flags);
+	UNUSED(width);
+	UNUSED(precision);
+	UNUSED(size);
+
+	if (str == NULL)
+		return (write(1, "(null)", 6));
+
+	while (str[i] != '\0')
+	{
+		if (is_printable(str[i]))
+			buffer[i + offset] = str[i];
+	}
+}
