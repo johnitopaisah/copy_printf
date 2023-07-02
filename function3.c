@@ -140,3 +140,47 @@ int print_non_printable(va_list types, char buffer[],
 
 	return (write(1, buffer, i + offset));
 }
+
+/*********************** PRINT REVERSE ******************************/
+/**
+ * print_reverse - Function that prints reverse string
+ * @types: The list of arguments
+ * @buffer: The buffer to handle print
+ * @flags: To calculate the active flags
+ * @width: The width specifier
+ * @precision: The precision specifier
+ * @size: The size specifier
+ *
+ * Return: Return the number of chars printed
+ */
+int print_reverse(va_list types, char buffer[],
+		int flags, int width, int precision, int size)
+{
+	char *str;
+	int i, count = 0;
+
+	UNUSED(buffer);
+	UNUSED(flags);
+	UNUSED(width);
+	UNUSED(size);
+
+	str = va_arg(types, char *);
+
+	if (str == NULL)
+	{
+		UNUSED(precision);
+
+		str = ")Null(";
+	}
+	for (i = 0; str[i]; i++)
+		;
+
+	for (i = i - 1; i >= 0; i--)
+	{
+		char z = str[i];
+
+		write(1, &z, 1);
+		count++;
+	}
+	return (count);
+}
