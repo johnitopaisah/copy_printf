@@ -80,7 +80,7 @@ int print_non_printable(va_list types, char buffer[],
 int print_pointer(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
 
-/* Function to handle other specifiers */
+/* Function to handle specifiers */
 int get_flags(const char *format, int *i);
 int get_width(const char *format, int *i, va_list list);
 int get_precision(const char *format, int *i, va_list list);
@@ -102,7 +102,6 @@ int write_pointer(char buffer[], int ind, int length,
 int is_printable(char);
 int is_digit(char);
 int append_hexa_code(char, char[], int);
-
 long int convert_size_number(long int num, int size);
 long int convert_size_unsignd(unsigned long int num, int size);
 
