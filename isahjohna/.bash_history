@@ -256,3 +256,6 @@ ls
 sudo -i
 
 sudo -i
+cd /home/
+LS
+sudo -i
